@@ -1,22 +1,36 @@
 {
-  "name": "template-frontend-nextjs",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "NODE_OPTIONS='--inspect' next dev -p ${PORT:-3030}",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "test": "jest",
+    "test:dev": "jest --watch src/**/*",
+    "lint": "yarn eslint:check && yarn prettier:check",
+    "lint:fix": "yarn eslint:fix && yarn prettier:fix",
+    "lint:ci": "mkdir -p linter && yarn eslint:ci:check && yarn prettier:fix",
+    "prettier:check": "prettier -l .",
+    "prettier:fix": "prettier -w .",
+    "eslint:check": "eslint --report-unused-disable-directives .",
+    "eslint:ci:check": "eslint-output --report-unused-disable-directives .",
+    "eslint:fix": "eslint --fix",
+    "docker:run": "docker-compose up -d"
   },
   "dependencies": {
     "next": "12.0.10",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@types/node": "17.0.18",
     "@types/react": "17.0.39",
-    "eslint": "8.9.0",
+    "@types/styled-components": "^5.1.22",
+    "babel-plugin-styled-components": "^2.0.2",
+    "eslint": "^8.9.0",
     "eslint-config-next": "12.0.10",
+    "prettier": "^2.5.1",
     "typescript": "4.5.5"
   }
 }

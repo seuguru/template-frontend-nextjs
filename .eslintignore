@@ -1,0 +1,17 @@
+.next
+.docker
+.github
+.vscode
+.yarn-cache
+.dockerignore
+.eslintrc.js
+build
+coverage
+node_modules
+*.json
+next.config.js
+jest.config.js
+jest.setup.js
+sentry.client.config.js
+sentry.server.config.js
+server.js

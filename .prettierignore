@@ -1,0 +1,11 @@
+.next
+.docker
+.github
+.vscode
+.yarn-cache
+.dockerignore
+.eslintrc.js
+build
+coverage
+node_modules
+*.json

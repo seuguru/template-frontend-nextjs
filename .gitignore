@@ -33,5 +33,21 @@ yarn-error.log*
 # vercel
 .vercel
 
+*:Zone.Identifier
+
 # typescript
 *.tsbuildinfo
+
+# yarn cache
+.yarn-cache
+
+# SonarQube test report
+coverage
+linter
+
+# SonarScanner
+.scannerwork
+
+# Ignore lock files, as are unnecessary for a template
+package-lock.json
+yarn.lock

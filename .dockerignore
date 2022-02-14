@@ -1,0 +1,11 @@
+.git
+.next
+.github
+.vscode
+.gitignore
+node_modules
+README.md
+Dockerfile*
+docker-compose.*
+npm-debug.log
+*.tsbuildinfo
