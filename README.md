@@ -1,14 +1,10 @@
-# Portfolio Starter Kit
+<h1 align="center">Hello guruzinho 👋</h1>
+<p>
+</p>
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio. This starter includes:
+> Frontend template for NextJS projects
 
-- Automatically configured to handle Markdown/MDX
-- Generates an RSS feed based on your posts
-- A beautiful theme included out of the box
-- Easily categorize posts with tags
-- Fast, optimized web font loading
-
-https://demo.vercel.blog
+### 🏠 [Homepage](https://www.seuguru.com.br)
 
 ## Configuration
 
@@ -17,26 +13,31 @@ https://demo.vercel.blog
 1. Update the meta tags in `pages/_document.js`.
 1. Update the posts inside `pages/posts/*.md` with your own content.
 
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog&project-name=portfolio&repository-name=portfolio)
-
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the project:
 
 ```bash
-npx create-next-app --example https://github.com/seuguru/template-frontend-nextjs nome_projeto
+npx create-next-app --example https://github.com/seuguru/template-frontend-nextjs project_name
 # or
-yarn create next-app --example https://github.com/seuguru/template-frontend-nextjs nome_projeto
+yarn create next-app --example https://github.com/seuguru/template-frontend-nextjs project_name
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Author
+
+👤 **Seu Guru**
+
+* Website: www.seuguru.com.br
+* Github: [@seuguru](https://github.com/seuguru)
+* LinkedIn: [Seu Guru](https://www.linkedin.com\/company\/seu-guru)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/seuguru/template-frontend-nextjs/issues). 
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
