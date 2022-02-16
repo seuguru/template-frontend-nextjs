@@ -14,7 +14,7 @@
 
 * Jest, React Testing Library and Cypress;
 
-* SonnarQube, Elastic APM and logs collector and CI/CD.
+* SonnarQube, Elastic APM and CI/CD.
 
 ## How to use
 
@@ -50,6 +50,10 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
     > **HEROKU_PROD_APP_NAME -** Production app name in Heroku
     >
     > **HEROKU_API_KEY -** API key of an user with access to both apps
+    >
+    > **ELASTIC_APM_SERVICE_NAME -** The app identifier in Elastic
+    >
+    > **ELASTIC_APM_URL -** Elastic APM server url
 
 <br/>
 

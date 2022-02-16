@@ -36,7 +36,8 @@ jobs:
         run: >-
           docker build -f Dockerfile.prod
           --build-arg BUILDKIT_INLINE_CACHE=1
-          --build-arg NEXT_PUBLIC_ENV_ARG="production"
+          --build-arg NEXT_PUBLIC_ELASTIC_APM_SERVICE_NAME_ARG=${{ secrets.ELASTIC_APM_SERVICE_NAME }}
+          --build-arg NEXT_PUBLIC_ELASTIC_APM_URL_ARG=${{ secrets.ELASTIC_APM_URL }}
           --cache-from "$IMAGE_CD:$LATEST_TAG"
           --cache-from "$IMAGE_CI:$LATEST_TAG" -t "$IMAGE_CD:$IMAGE_TAG" .
 
