@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   background-image: linear-gradient(135deg, #C5E205 50%, #FFFFFF 50%);
   
-  font-family: Eina;
+  font-family: Eina, sans-serif;
   font-weight: 600;
   font-size: 19px;
 
@@ -27,7 +27,7 @@ export const Container = styled.div`
 
   .text {
     margin-bottom: 1em;
-    font-family: Eina;
+    font-family: Eina, sans-serif;
   }
 
   .title {
@@ -50,7 +50,7 @@ export const Container = styled.div`
     
     cursor: pointer;
     
-    font-family: Eina;
+    font-family: Eina, sans-serif;
     font-size: 1em;
     text-decoration: none;
     color: black;

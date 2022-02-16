@@ -6,6 +6,16 @@
 
 ### 🏠 [Homepage](https://www.seuguru.com.br)
 
+## Includes
+
+* Styled Components;
+
+* ESLint, Prettier and Stylelint;
+
+* Jest, React Testing Library and Cypress;
+
+* SonnarQube, Elastic APM and logs collector and CI/CD.
+
 ## Configuration
 
 1. Update your name in `theme.config.js` or change the footer.
@@ -22,6 +32,46 @@ npx create-next-app --example https://github.com/seuguru/template-frontend-nextj
 # or
 yarn create next-app --example https://github.com/seuguru/template-frontend-nextjs project_name
 ```
+
+## Available commands
+<br/>
+
+> **dev -** Runs the application in development mode
+> 
+> **debug -** Runs the application in development mode with debugging
+> 
+> **build -** Build the application
+> 
+> 
+> **start -** Starts the NextJS server
+> 
+> **test -** Runs unit testing and coverage
+> 
+> **test:dev -** Runs unit testing and watch to changes in test source files
+> 
+> **lint -** Runs eslint, prettier and stylelint linting
+> 
+> **lint:fix -** Runs and automatically FIX linter warnings
+> 
+> **lint:ci -** Runs linter for continuous integration
+> 
+> **lint:css -** Runs stylelint for css linting
+> 
+> **prettier:check -** Runs prettier and catch all errors/warnings
+> 
+> **prettier:fix -** Automatically fix all prettier warnings
+> 
+> **eslint:check -** Runs eslint and catch all errors/warnings
+> 
+> **eslint:ci:check -** Runs eslint for continuous integration
+> 
+> **stylelint:check -** Runs eslint and catch all css errors
+> 
+> **eslint:fix -** Automatically fix all eslint warnings
+> 
+> **docker:run -** Run docker compose
+
+<br/>
 
 ## Author
 

@@ -13,7 +13,7 @@ export const Title = styled.h2`
   margin: 0;
   margin-bottom: 30px;
 
-  font-family: Eina;
+  font-family: Eina, sans-serif;
   font-weight: 600;
   font-size: 32px;
   color: #1D1D1D;
@@ -23,7 +23,7 @@ export const Subtitle = styled.h3`
   margin: 0;
   margin-bottom: 10px;
 
-  font-family: Eina;
+  font-family: Eina, sans-serif;
   font-weight: normal;
   font-size: 22px;
   color: black;

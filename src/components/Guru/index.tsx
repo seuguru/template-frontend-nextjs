@@ -1,7 +1,7 @@
 import { GuruImage } from "./styles";
 
 const Guru: React.FC = () => (
-  <GuruImage />
+  <GuruImage role="guru" />
 );
 
 export default Guru;
