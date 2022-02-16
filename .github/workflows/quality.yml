@@ -1,0 +1,104 @@
+name: Quality
+on:
+  push:
+    branches:
+      - main
+      - development
+
+env:
+  IMAGE_CI: ${{ secrets.AWS_ECR_REGISTRY }}/seuguru-frontend-ci
+  LATEST_TAG: latest
+
+jobs:
+
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_CI_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_CI_ACCESS_KEY_SECRET }}
+          aws-region: ${{ secrets.AWS_ECR_REGION }}
+
+      - name: Login to ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Run CI container
+        run: >
+          docker run -d
+          --volume "$(pwd)"/coverage:/app/coverage
+          --name frontend-ci
+          "$IMAGE_CI:$LATEST_TAG"
+
+      - name: Run tests
+        run: docker exec frontend-ci yarn test
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage
+
+  linter:
+    name: Run linter
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_CI_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_CI_ACCESS_KEY_SECRET }}
+          aws-region: ${{ secrets.AWS_ECR_REGION }}
+
+      - name: Login to ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Run CI container
+        run: >
+          docker run -d
+          --volume "$(pwd)"/linter:/app/linter
+          --name frontend-ci
+          "$IMAGE_CI:$LATEST_TAG"
+
+      - name: Run linter
+        run: docker exec frontend-ci yarn lint:ci
+
+      - name: Upload linter report
+        uses: actions/upload-artifact@v2
+        with:
+          name: linter-report
+          path: linter
+
+  quality:
+    name: Run SonarQube quality assurance
+    runs-on: ubuntu-latest
+    needs: linter
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5
+
+      - name: Download coverage report
+        uses: actions/download-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage
+
+      - name: Download linter report
+        uses: actions/download-artifact@v2
+        with:
+          name: linter-report
+          path: linter
+
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.branch.name=${{ steps.branch-name.outputs.current_branch }}
