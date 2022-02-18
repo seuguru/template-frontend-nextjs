@@ -8,10 +8,10 @@
 build
 coverage
 node_modules
+next-env.d.ts
 *.json
-next.config.js
-jest.config.js
-jest.setup.js
+*.config.js
+jest.*.js
 sentry.client.config.js
 sentry.server.config.js
 server.js

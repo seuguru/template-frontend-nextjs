@@ -112,6 +112,8 @@ jobs:
     needs: linter
     steps:
       - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
 
       - name: Download coverage report
         uses: actions/download-artifact@v2
@@ -124,6 +126,11 @@ jobs:
         with:
           name: linter-report
           path: linter
+
+      - name: Fix linter report paths
+        working-directory: ./linter
+        run: |
+          sudo sed -i "s@/app/@/github/workspace/@g" eslint-report.json
 
       - uses: sonarsource/sonarqube-scan-action@master
         env:
