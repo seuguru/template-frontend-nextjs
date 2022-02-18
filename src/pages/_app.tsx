@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { init as initApm } from '@elastic/apm-rum';
+import { useEffect } from "react";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { init as initApm } from "@elastic/apm-rum";
 
-import GlobalStyle from 'styles/global';
+import GlobalStyle from "styles/global";
 
 declare const APP_VERSION: string;
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-
   const initElasticApm = () => {
     if (!process.env.NEXT_PUBLIC_ELASTIC_APM_URL) return;
     initApm({
@@ -34,6 +33,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default MyApp;

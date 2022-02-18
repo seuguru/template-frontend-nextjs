@@ -5,7 +5,13 @@
 .yarn-cache
 .dockerignore
 .eslintrc.js
+.stylelintrc
 build
 coverage
 node_modules
 *.json
+README.md
+cypress
+docker-compose.yml
+jest.*.js
+*.config.js

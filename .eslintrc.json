@@ -14,5 +14,8 @@
       ],
       "extends": ["plugin:testing-library/react"]
     }
-  ]
+  ],
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"]
+  }
 }

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
- 
+import { createGlobalStyle } from "styled-components";
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Eina;
@@ -22,5 +22,5 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 `;
- 
+
 export default GlobalStyle;

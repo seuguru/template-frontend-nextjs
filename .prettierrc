@@ -1,10 +1,10 @@
 {
   "proseWrap": "preserve",
-  "printWidth": 100,
+  "printWidth": 95,
   "jsxSingleQuote": false,
   "endOfLine": "lf",
   "bracketSpacing": true,
-  "arrowParens": "always",
+  "arrowParens": "avoid",
   "bracketSameLine": true,
   "trailingComma": "es5",
   "tabWidth": 2,

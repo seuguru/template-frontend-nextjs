@@ -15,3 +15,4 @@ jest.setup.js
 sentry.client.config.js
 sentry.server.config.js
 server.js
+cypress

@@ -16,7 +16,7 @@ export const Title = styled.h2`
   font-family: Eina, sans-serif;
   font-weight: 600;
   font-size: 32px;
-  color: #1D1D1D;
+  color: #1d1d1d;
 `;
 
 export const Subtitle = styled.h3`
