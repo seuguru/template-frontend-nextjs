@@ -8,7 +8,7 @@ env:
   CI: true
   DOCKER_BUILDKIT: 1
   DOCKER_TLS_CERTDIR: "/certs"
-  IMAGE_CI: ${{ secrets.AWS_ECR_REGISTRY }}/seuguru-frontend-ci
+  IMAGE_CI: ${{ secrets.AWS_ECR_REGISTRY }}/seuguru-checkout-ci
   IMAGE_TAG: ${{ github.sha }}
   LATEST_TAG: latest
 
@@ -64,7 +64,7 @@ jobs:
           docker run -d
           --volume "$(pwd)"/coverage:/app/coverage
           --name frontend-ci
-          "$IMAGE_CI:$LATEST_TAG"
+          "$IMAGE_CI:$IMAGE_TAG"
 
       - name: Run tests
         run: docker exec frontend-ci yarn test
@@ -74,7 +74,7 @@ jobs:
         with:
           name: coverage-report
           path: coverage
-  
+
   linter:
     name: Run linter
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
           docker run -d
           --volume "$(pwd)"/linter:/app/linter
           --name frontend-ci
-          "$IMAGE_CI:$LATEST_TAG"
+          "$IMAGE_CI:$IMAGE_TAG"
 
       - name: Run linter
         run: docker exec frontend-ci yarn lint:ci
@@ -112,10 +112,6 @@ jobs:
     needs: linter
     steps:
       - uses: actions/checkout@master
-
-      - uses: actions/checkout@master
-        with:
-          ref: ${{ github.base_ref }}
 
       - name: Download coverage report
         uses: actions/download-artifact@v2

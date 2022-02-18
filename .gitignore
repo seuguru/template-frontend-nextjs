@@ -50,4 +50,3 @@ linter
 
 # Ignore lock files, as are unnecessary for a template
 package-lock.json
-yarn.lock

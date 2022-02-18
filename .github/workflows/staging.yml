@@ -72,10 +72,10 @@ jobs:
         run: heroku container:login
 
       - name: Pull staging image
-        run: docker pull "$IMAGE_CD:$LATEST_TAG"
+        run: docker pull "$IMAGE_CD:$IMAGE_TAG"
 
       - name: Tag image
-        run: docker tag $IMAGE_CD registry.heroku.com/$HEROKU_APP_NAME/web
+        run: docker tag "$IMAGE_CD:$IMAGE_TAG" registry.heroku.com/$HEROKU_APP_NAME/web
 
       - name: Push image
         run: docker push registry.heroku.com/$HEROKU_APP_NAME/web
