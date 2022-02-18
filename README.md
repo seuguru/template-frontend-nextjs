@@ -35,9 +35,13 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
 3. Setup the following secrets in GitHub project repository:
     > **AWS_ECR_REGISTRY -** ECR repository endpoint
     >
-    > **AWS_CI_ACCESS_KEY_ID -** Access key id of an user with access to project ECR repository
+    > **AWS_CI_ACCESS_KEY_ID -** Access key id of an user with access to project CI ECR repository
     >
-    > **AWS_CI_ACCESS_KEY_SECRET -** User secret
+    > **AWS_CI_ACCESS_KEY_SECRET -** User secret for CI ECR repository
+    >
+    > **AWS_CD_ACCESS_KEY_ID -** Access key id of an user with access to project CD ECR repository
+    >
+    > **AWS_CD_ACCESS_KEY_SECRET -** User secret for CD ECR repository
     >
     > **AWS_ECR_REGION -** AWS region in which ECR repository is allocated
     >
@@ -64,9 +68,9 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
     * production.yml
     <br/>
     <br/>
-    
+
     The env should look like this:
-    
+
     `IMAGE_CI: ${{ secrets.AWS_ECR_REGISTRY }}/seuguru-frontend-ci`
 
 5. Update **IMAGE_CD** with the name of project deployment image, e.g. seuguru-frontend, in the following files:
@@ -76,8 +80,10 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
     <br/>
 
     The env should look like this:
-        
+
     `IMAGE_CD: ${{ secrets.AWS_ECR_REGISTRY }}/seuguru-frontend`
+
+6. Update this README with a wonderful description about project.
 
 <br/>
 
@@ -85,38 +91,38 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
 <br/>
 
 > **dev -** Runs the application in development mode
-> 
+>
 > **debug -** Runs the application in development mode with debugging
-> 
+>
 > **build -** Build the application
-> 
-> 
+>
+>
 > **start -** Starts the NextJS server
-> 
+>
 > **test -** Runs unit testing and coverage
-> 
+>
 > **test:dev -** Runs unit testing and watch to changes in test source files
-> 
+>
 > **lint -** Runs eslint, prettier and stylelint linting
-> 
+>
 > **lint:fix -** Runs and automatically FIX linter warnings
-> 
+>
 > **lint:ci -** Runs linter for continuous integration
-> 
+>
 > **lint:css -** Runs stylelint for css linting
-> 
+>
 > **prettier:check -** Runs prettier and catch all errors/warnings
-> 
+>
 > **prettier:fix -** Automatically fix all prettier warnings
-> 
+>
 > **eslint:check -** Runs eslint and catch all errors/warnings
-> 
+>
 > **eslint:ci:check -** Runs eslint for continuous integration
-> 
+>
 > **stylelint:check -** Runs eslint and catch all css errors
-> 
+>
 > **eslint:fix -** Automatically fix all eslint warnings
-> 
+>
 > **docker:run -** Run docker compose
 
 <br/>
@@ -131,7 +137,7 @@ yarn create next-app --example https://github.com/seuguru/template-frontend-next
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/seuguru/template-frontend-nextjs/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/seuguru/template-frontend-nextjs/issues).
 
 ## Show your support
 
