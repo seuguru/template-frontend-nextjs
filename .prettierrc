@@ -1,6 +1,6 @@
 {
   "proseWrap": "preserve",
-  "printWidth": 95,
+  "printWidth": 92,
   "jsxSingleQuote": false,
   "endOfLine": "lf",
   "bracketSpacing": true,
