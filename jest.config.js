@@ -203,6 +203,8 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+
+  snapshotResolver: "<rootDir>/jest.snapshots.js",
 };
 
 
